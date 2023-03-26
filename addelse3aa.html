@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Adde lse3a</title>
+ <style>
+  body {
+   background: linear-gradient(to right, #4b0082, #9400d3);
+   font-family: Arial, sans-serif;
+   color: #fff;
+  }
+
+  .clock-container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 50vh;
+  }
+
+  .clock {
+   background-color: #371F76;
+   border-radius: 20px;
+   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+   padding: 50px;
+   margin: 0 50px;
+   text-align: center;
+  }
+
+  .clock h1 {
+   margin-top: 0;
+  }
+
+  .clock p {
+   font-size: 50px;
+   margin: 20px 0;
+  }
+ footer {
+   position: fixed;
+   bottom: 0;
+   left: 0;
+   text-align: center;
+}
+
+
+ </style>
+</head>
+<body>
+<center>
+<p style = "font-size: 100px;"><b>  🕐  Adde lse3a </b> </p>
+</center>
+<footer>
+<p> ~A </p>
+</footer>
+
+ <div class="clock-container">
+  <div class="clock">
+   <h1>توقيت لبنان العالمي</h1>
+   <p id="lebanon-time"></p>
+  </div>
+  <div class="clock">
+   <h1> توقيت بري ميقاتي</h1>
+   <p id="italy-time"></p>
+  </div>
+ </div>
+
+ <script>
+  function updateTime() {
+   // Get current time in Lebanon
+   let lebanonTime = new Date().toLocaleString("en-US", {timeZone: "Asia/Beirut"});
+   document.getElementById("lebanon-time").innerHTML = lebanonTime;
+
+   // Get current time in Italy
+   let italyTime = new Date().toLocaleString("en-US", {timeZone: "Europe/Rome"});
+   document.getElementById("italy-time").innerHTML = italyTime;
+  }
+
+  // Update time every second
+  setInterval(updateTime, 1000);
+ </script>
+</body>
+</html>
